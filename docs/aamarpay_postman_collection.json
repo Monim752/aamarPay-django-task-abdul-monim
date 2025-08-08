@@ -1,0 +1,744 @@
+{
+	"info": {
+		"_postman_id": "1dd947d1-3ac4-47d1-a2c8-e475bfd6c17b",
+		"name": "aamarPay Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19980717"
+	},
+	"item": [
+		{
+			"name": "initiate payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Monim@752",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "065192",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/initiate-payment/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"initiate-payment",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "initiate payment",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token 7fd6224332987e4329cb47f2100a137084450779",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "Monim@752",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "065192",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/initiate-payment/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"initiate-payment",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 08 Aug 2025 15:12:34 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "83"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"payment_url\": \"https://sandbox.aamarpay.com/paynow.php?track=AAM1754665952103892\"\n}"
+				}
+			]
+		},
+		{
+			"name": "transaction",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "transaction",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token 7fd6224332987e4329cb47f2100a137084450779",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "Monim@752",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "065192",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/transactions/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"transactions",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 08 Aug 2025 15:13:31 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3914"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 5,\n        \"transaction_id\": \"acce4b65-d4c2-4330-9f78-3fee0836\",\n        \"amount\": \"100.00\",\n        \"status\": \"successful\",\n        \"gateway_response\": {\n            \"pg_txnid\": \"AAM1754665952103892\",\n            \"mer_txnid\": \"acce4b65-d4c2-4330-9f78-3fee0836\",\n            \"risk_title\": \"Safe\",\n            \"risk_level\": \"0\",\n            \"cus_name\": \"Monim@752\",\n            \"cus_email\": \"abdulmonim752@gmail.com\",\n            \"cus_phone\": \"01700000000\",\n            \"desc\": \"File upload fee\",\n            \"cus_add1\": null,\n            \"cus_add2\": null,\n            \"cus_city\": null,\n            \"cus_state\": null,\n            \"cus_postcode\": null,\n            \"cus_country\": null,\n            \"cus_fax\": null,\n            \"ship_name\": null,\n            \"ship_add1\": null,\n            \"ship_add2\": null,\n            \"ship_city\": null,\n            \"ship_state\": null,\n            \"ship_postcode\": null,\n            \"ship_country\": null,\n            \"merchant_id\": \"aamarpaytest\",\n            \"store_id\": \"aamarpaytest\",\n            \"amount\": \"100.00\",\n            \"amount_bdt\": \"100.00\",\n            \"amount_original\": \"100.00\",\n            \"pay_status\": \"Successful\",\n            \"status_code\": \"2\",\n            \"status_title\": \"Successful Transaction\",\n            \"cardnumber\": \"1234XXXXXXXXX123\",\n            \"approval_code\": \"1066112192452\",\n            \"payment_processor\": \"DBBL\",\n            \"bank_trxid\": \"1066112192452\",\n            \"payment_type\": \"DBBL-VISA\",\n            \"error_code\": \"No\",\n            \"error_title\": \"Not Available\",\n            \"bin_country\": \"Not Available\",\n            \"bin_issuer\": \"Not Available\",\n            \"bin_cardtype\": \"Not Available\",\n            \"bin_cardcategory\": \"Not Available\",\n            \"date\": \"2025-08-08 21:12:32\",\n            \"date_processed\": \"2025-08-08 21:12:32\",\n            \"amount_currency\": \"100.00\",\n            \"rec_amount\": \"96.75\",\n            \"store_amount\": \"96.75\",\n            \"processing_ratio\": \"3.25\",\n            \"processing_charge\": \"3.25\",\n            \"ip\": \"103.161.151.99\",\n            \"currency\": \"BDT\",\n            \"currency_merchant\": \"BDT\",\n            \"convertion_rate\": \"Not-Available\",\n            \"opt_a\": \"Not-Available\",\n            \"opt_b\": \"Not-Available\",\n            \"opt_c\": \"Not-Available\",\n            \"opt_d\": \"Not-Available\",\n            \"verify_status\": \"PENDING\",\n            \"call_type\": \"Post-Method\",\n            \"email_send\": \"Not-Available\",\n            \"doc_recived\": \"NO\",\n            \"checkout_status\": \"Not-Paid-Yet\"\n        },\n        \"timestamp\": \"2025-08-08T15:12:34.355115Z\",\n        \"user\": 1\n    },\n    {\n        \"id\": 4,\n        \"transaction_id\": \"9dec20e9-6512-474d-8c10-ee77b2cf\",\n        \"amount\": \"100.00\",\n        \"status\": \"initiated\",\n        \"gateway_response\": null,\n        \"timestamp\": \"2025-08-08T10:53:17.867020Z\",\n        \"user\": 1\n    },\n    {\n        \"id\": 3,\n        \"transaction_id\": \"a6a362d7-b604-4d4b-b603-d95aa1a4\",\n        \"amount\": \"100.00\",\n        \"status\": \"successful\",\n        \"gateway_response\": {\n            \"pg_txnid\": \"AAM1754649850103759\",\n            \"mer_txnid\": \"a6a362d7-b604-4d4b-b603-d95aa1a4\",\n            \"risk_title\": \"Safe\",\n            \"risk_level\": \"0\",\n            \"cus_name\": \"Monim@752\",\n            \"cus_email\": \"abdulmonim752@gmail.com\",\n            \"cus_phone\": \"01700000000\",\n            \"desc\": \"File upload fee\",\n            \"cus_add1\": null,\n            \"cus_add2\": null,\n            \"cus_city\": null,\n            \"cus_state\": null,\n            \"cus_postcode\": null,\n            \"cus_country\": null,\n            \"cus_fax\": null,\n            \"ship_name\": null,\n            \"ship_add1\": null,\n            \"ship_add2\": null,\n            \"ship_city\": null,\n            \"ship_state\": null,\n            \"ship_postcode\": null,\n            \"ship_country\": null,\n            \"merchant_id\": \"aamarpaytest\",\n            \"store_id\": \"aamarpaytest\",\n            \"amount\": \"100.00\",\n            \"amount_bdt\": \"100.00\",\n            \"amount_original\": \"100.00\",\n            \"pay_status\": \"Successful\",\n            \"status_code\": \"2\",\n            \"status_title\": \"Successful Transaction\",\n            \"cardnumber\": \"1234XXXXXXXXX123\",\n            \"approval_code\": \"1096005433446\",\n            \"payment_processor\": \"DBBL\",\n            \"bank_trxid\": \"1096005433446\",\n            \"payment_type\": \"DBBL-VISA\",\n            \"error_code\": \"No\",\n            \"error_title\": \"Not Available\",\n            \"bin_country\": \"Not Available\",\n            \"bin_issuer\": \"Not Available\",\n            \"bin_cardtype\": \"Not Available\",\n            \"bin_cardcategory\": \"Not Available\",\n            \"date\": \"2025-08-08 16:44:10\",\n            \"date_processed\": \"2025-08-08 16:44:10\",\n            \"amount_currency\": \"100.00\",\n            \"rec_amount\": \"96.75\",\n            \"store_amount\": \"96.75\",\n            \"processing_ratio\": \"3.25\",\n            \"processing_charge\": \"3.25\",\n            \"ip\": \"103.161.151.99\",\n            \"currency\": \"BDT\",\n            \"currency_merchant\": \"BDT\",\n            \"convertion_rate\": \"Not-Available\",\n            \"opt_a\": \"Not-Available\",\n            \"opt_b\": \"Not-Available\",\n            \"opt_c\": \"Not-Available\",\n            \"opt_d\": \"Not-Available\",\n            \"verify_status\": \"PENDING\",\n            \"call_type\": \"Post-Method\",\n            \"email_send\": \"Not-Available\",\n            \"doc_recived\": \"NO\",\n            \"checkout_status\": \"Not-Paid-Yet\"\n        },\n        \"timestamp\": \"2025-08-08T10:44:11.928632Z\",\n        \"user\": 1\n    },\n    {\n        \"id\": 2,\n        \"transaction_id\": \"a876ade8-d919-4e2c-8219-a0a31c0b\",\n        \"amount\": \"100.00\",\n        \"status\": \"initiated\",\n        \"gateway_response\": null,\n        \"timestamp\": \"2025-08-08T10:41:14.450250Z\",\n        \"user\": 1\n    },\n    {\n        \"id\": 1,\n        \"transaction_id\": \"2e282d18-2091-4f4e-8577-e02db9f2\",\n        \"amount\": \"100.00\",\n        \"status\": \"initiated\",\n        \"gateway_response\": null,\n        \"timestamp\": \"2025-08-08T10:36:23.571831Z\",\n        \"user\": 1\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "payment success",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 7fd6224332987e4329cb47f2100a137084450779",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/payment/success/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"payment",
+						"success",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "payment success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token 7fd6224332987e4329cb47f2100a137084450779",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/payment/success/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"payment",
+								"success",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 08 Aug 2025 17:31:24 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"message\": \"payment verified\"\n}"
+				}
+			]
+		},
+		{
+			"name": "file upload",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 7fd6224332987e4329cb47f2100a137084450779",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "user",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/hp/Downloads/my_file.txt"
+						},
+						{
+							"key": "filename",
+							"value": "my_file.txt",
+							"type": "text"
+						},
+						{
+							"key": "upload_time",
+							"value": "\"\"",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "processing",
+							"type": "text"
+						},
+						{
+							"key": "word_count",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/upload/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"upload",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "file upload",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token 7fd6224332987e4329cb47f2100a137084450779",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "user",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/hp/Downloads/my_file.txt"
+								},
+								{
+									"key": "filename",
+									"value": "my_file.txt",
+									"type": "text"
+								},
+								{
+									"key": "upload_time",
+									"value": "\"\"",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "processing",
+									"type": "text"
+								},
+								{
+									"key": "word_count",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/upload/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"upload",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 08 Aug 2025 15:14:54 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "202"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"user\": 1,\n    \"file\": \"http://127.0.0.1:8000/media/uploads/2025/08/08/my_file_lunZKGb.txt\",\n    \"filename\": \"my_file.txt\",\n    \"upload_time\": \"2025-08-08T15:14:50.034874Z\",\n    \"status\": \"processing\",\n    \"word_count\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Files",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 7fd6224332987e4329cb47f2100a137084450779",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/files/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"files",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "files",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token 7fd6224332987e4329cb47f2100a137084450779",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/files/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"files",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 08 Aug 2025 15:15:07 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "396"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"user\": 1,\n        \"file\": \"http://127.0.0.1:8000/media/uploads/2025/08/08/my_file_lunZKGb.txt\",\n        \"filename\": \"my_file.txt\",\n        \"upload_time\": \"2025-08-08T15:14:50.034874Z\",\n        \"status\": \"completed\",\n        \"word_count\": 30\n    },\n    {\n        \"id\": 1,\n        \"user\": 1,\n        \"file\": \"http://127.0.0.1:8000/media/uploads/2025/08/08/my_file.txt\",\n        \"filename\": \"my_file.txt\",\n        \"upload_time\": \"2025-08-08T11:33:27.255737Z\",\n        \"status\": \"processing\",\n        \"word_count\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "activities",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "activity",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token 7fd6224332987e4329cb47f2100a137084450779",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/activity/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"activity",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 08 Aug 2025 15:15:48 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3495"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3,\n        \"action\": \"file_processed\",\n        \"metadata\": {\n            \"file_upload_id\": 2,\n            \"word_count\": 30\n        },\n        \"timestamp\": \"2025-08-08T15:14:54.126944Z\",\n        \"user\": 1\n    },\n    {\n        \"id\": 2,\n        \"action\": \"payment_success\",\n        \"metadata\": {\n            \"mer_txnid\": \"acce4b65-d4c2-4330-9f78-3fee0836\",\n            \"gateway\": {\n                \"pg_txnid\": \"AAM1754665952103892\",\n                \"mer_txnid\": \"acce4b65-d4c2-4330-9f78-3fee0836\",\n                \"risk_title\": \"Safe\",\n                \"risk_level\": \"0\",\n                \"cus_name\": \"Monim@752\",\n                \"cus_email\": \"abdulmonim752@gmail.com\",\n                \"cus_phone\": \"01700000000\",\n                \"desc\": \"File upload fee\",\n                \"cus_add1\": null,\n                \"cus_add2\": null,\n                \"cus_city\": null,\n                \"cus_state\": null,\n                \"cus_postcode\": null,\n                \"cus_country\": null,\n                \"cus_fax\": null,\n                \"ship_name\": null,\n                \"ship_add1\": null,\n                \"ship_add2\": null,\n                \"ship_city\": null,\n                \"ship_state\": null,\n                \"ship_postcode\": null,\n                \"ship_country\": null,\n                \"merchant_id\": \"aamarpaytest\",\n                \"store_id\": \"aamarpaytest\",\n                \"amount\": \"100.00\",\n                \"amount_bdt\": \"100.00\",\n                \"amount_original\": \"100.00\",\n                \"pay_status\": \"Successful\",\n                \"status_code\": \"2\",\n                \"status_title\": \"Successful Transaction\",\n                \"cardnumber\": \"1234XXXXXXXXX123\",\n                \"approval_code\": \"1066112192452\",\n                \"payment_processor\": \"DBBL\",\n                \"bank_trxid\": \"1066112192452\",\n                \"payment_type\": \"DBBL-VISA\",\n                \"error_code\": \"No\",\n                \"error_title\": \"Not Available\",\n                \"bin_country\": \"Not Available\",\n                \"bin_issuer\": \"Not Available\",\n                \"bin_cardtype\": \"Not Available\",\n                \"bin_cardcategory\": \"Not Available\",\n                \"date\": \"2025-08-08 21:12:32\",\n                \"date_processed\": \"2025-08-08 21:12:32\",\n                \"amount_currency\": \"100.00\",\n                \"rec_amount\": \"96.75\",\n                \"store_amount\": \"96.75\",\n                \"processing_ratio\": \"3.25\",\n                \"processing_charge\": \"3.25\",\n                \"ip\": \"103.161.151.99\",\n                \"currency\": \"BDT\",\n                \"currency_merchant\": \"BDT\",\n                \"convertion_rate\": \"Not-Available\",\n                \"opt_a\": \"Not-Available\",\n                \"opt_b\": \"Not-Available\",\n                \"opt_c\": \"Not-Available\",\n                \"opt_d\": \"Not-Available\",\n                \"verify_status\": \"PENDING\",\n                \"call_type\": \"Post-Method\",\n                \"email_send\": \"Not-Available\",\n                \"doc_recived\": \"NO\",\n                \"checkout_status\": \"Not-Paid-Yet\"\n            }\n        },\n        \"timestamp\": \"2025-08-08T15:13:09.728031Z\",\n        \"user\": 1\n    },\n    {\n        \"id\": 1,\n        \"action\": \"payment_success\",\n        \"metadata\": {\n            \"mer_txnid\": \"a6a362d7-b604-4d4b-b603-d95aa1a4\",\n            \"gateway\": {\n                \"pg_txnid\": \"AAM1754649850103759\",\n                \"mer_txnid\": \"a6a362d7-b604-4d4b-b603-d95aa1a4\",\n                \"risk_title\": \"Safe\",\n                \"risk_level\": \"0\",\n                \"cus_name\": \"Monim@752\",\n                \"cus_email\": \"abdulmonim752@gmail.com\",\n                \"cus_phone\": \"01700000000\",\n                \"desc\": \"File upload fee\",\n                \"cus_add1\": null,\n                \"cus_add2\": null,\n                \"cus_city\": null,\n                \"cus_state\": null,\n                \"cus_postcode\": null,\n                \"cus_country\": null,\n                \"cus_fax\": null,\n                \"ship_name\": null,\n                \"ship_add1\": null,\n                \"ship_add2\": null,\n                \"ship_city\": null,\n                \"ship_state\": null,\n                \"ship_postcode\": null,\n                \"ship_country\": null,\n                \"merchant_id\": \"aamarpaytest\",\n                \"store_id\": \"aamarpaytest\",\n                \"amount\": \"100.00\",\n                \"amount_bdt\": \"100.00\",\n                \"amount_original\": \"100.00\",\n                \"pay_status\": \"Successful\",\n                \"status_code\": \"2\",\n                \"status_title\": \"Successful Transaction\",\n                \"cardnumber\": \"1234XXXXXXXXX123\",\n                \"approval_code\": \"1096005433446\",\n                \"payment_processor\": \"DBBL\",\n                \"bank_trxid\": \"1096005433446\",\n                \"payment_type\": \"DBBL-VISA\",\n                \"error_code\": \"No\",\n                \"error_title\": \"Not Available\",\n                \"bin_country\": \"Not Available\",\n                \"bin_issuer\": \"Not Available\",\n                \"bin_cardtype\": \"Not Available\",\n                \"bin_cardcategory\": \"Not Available\",\n                \"date\": \"2025-08-08 16:44:10\",\n                \"date_processed\": \"2025-08-08 16:44:10\",\n                \"amount_currency\": \"100.00\",\n                \"rec_amount\": \"96.75\",\n                \"store_amount\": \"96.75\",\n                \"processing_ratio\": \"3.25\",\n                \"processing_charge\": \"3.25\",\n                \"ip\": \"103.161.151.99\",\n                \"currency\": \"BDT\",\n                \"currency_merchant\": \"BDT\",\n                \"convertion_rate\": \"Not-Available\",\n                \"opt_a\": \"Not-Available\",\n                \"opt_b\": \"Not-Available\",\n                \"opt_c\": \"Not-Available\",\n                \"opt_d\": \"Not-Available\",\n                \"verify_status\": \"PENDING\",\n                \"call_type\": \"Post-Method\",\n                \"email_send\": \"Not-Available\",\n                \"doc_recived\": \"NO\",\n                \"checkout_status\": \"Not-Paid-Yet\"\n            }\n        },\n        \"timestamp\": \"2025-08-08T10:46:02.512948Z\",\n        \"user\": 1\n    }\n]"
+				}
+			]
+		}
+	]
+}
