@@ -23,9 +23,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9&pi8d44a30t2x1t90h%1-5zny%6g=-d*@k300o5k*f8c4%pdm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+import os
+import environ
+# import pdb
+# pdb.set_trace()
+env = environ.Env(DEBUG=(bool, False))
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
-ALLOWED_HOSTS = []
+SECRET_KEY = env('SECRET_KEY')
+DEBUG = env('DEBUG')
+ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
 
 
 # Application definition
@@ -37,7 +44,32 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'payments',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':(
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES':(
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+}
+
+MEDIA_ROOT = env('MEDIA_ROOT')
+MEDIA_URL = env('MEDIA_URL')
+
+# Celery
+CELERY_BROKER_URL = env('CELERY_BROKER_URL')
+CELERY_RESULT_BACKEND = CELERY_BROKER_URL
+
+# aamarPay values (read from env)
+AAMARPAY_STORE_ID = env('STORE_ID')
+AAMARPAY_SIGNATURE_KEY = env('SIGNATURE_KEY')
+AAMARPAY_ENDPOINT = env('AAMARPAY_ENDPOINT')
+AAMARPAY_TRX_CHECK = env('AAMARPAY_TRX_CHECK')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -7,10 +7,10 @@ __pycache__/
 
 # Virtual env
 venv/
-.venv/
+../.venv/
 
 # Environment variables
-.env
+aamarpay_project/.env
 
 # Django specific
 db.sqlite3
