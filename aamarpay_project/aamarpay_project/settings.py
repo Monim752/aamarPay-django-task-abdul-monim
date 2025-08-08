@@ -23,6 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9&pi8d44a30t2x1t90h%1-5zny%6g=-d*@k300o5k*f8c4%pdm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+import socket
 import os
 import environ
 # import pdb
@@ -58,11 +59,26 @@ REST_FRAMEWORK = {
     ),
 }
 
-MEDIA_ROOT = env('MEDIA_ROOT')
-MEDIA_URL = env('MEDIA_URL')
+
+# Detect if running in Docker
+def running_in_docker():
+    try:
+        # This hostname exists only in Docker networks
+        socket.gethostbyname('redis')
+        return True
+    except socket.error:
+        return False
+
+if running_in_docker():
+    CELERY_BROKER_URL = 'redis://redis:6379/0'
+    MEDIA_ROOT = '/app/media'
+else:
+    CELERY_BROKER_URL = 'redis://localhost:6379/0'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
 
 # Celery
-CELERY_BROKER_URL = env('CELERY_BROKER_URL')
 CELERY_RESULT_BACKEND = CELERY_BROKER_URL
 
 # aamarPay values (read from env)
@@ -152,3 +168,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = '/dashboard/'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
+

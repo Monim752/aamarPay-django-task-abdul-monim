@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    container_name: aamarpay_web
+    command: gunicorn aamarpay_project.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - .:/app
+      - media_data:/app/media
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - redis
+
+  celery:
+    build: .
+    container_name: aamarpay_celery
+    command: celery -A aamarpay_project worker --loglevel=info
+    volumes:
+      - .:/app
+      - media_data:/app/media
+    env_file:
+      - .env
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7
+    container_name: aamarpay_redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  media_data:
