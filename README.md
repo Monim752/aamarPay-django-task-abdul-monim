@@ -15,38 +15,39 @@ Features:
 ## **Setup Instructions**
 
 ### **1. Clone the repo**
-git clone https://github.com/<your-username>/aamarPay-django-task-abdul-monim.git
-cd aamarPay-django-task-abdul-monim
+- git clone https://github.com/<your-username>/aamarPay-django-task-abdul-monim.git
+- cd aamarPay-django-task-abdul-monim
 ## 2. Local Development Setup
-**Prerequisites**:
+**Prerequisites:**
 - Python 3.12+
 - Redis (local server on port 6379)
-**Install dependencies**
-python -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-**Create a .env in the same folder as manage.py**
-SECRET_KEY=change-me
-DEBUG=True
-ALLOWED_HOSTS=*
-STORE_ID=aamarpaytest
-SIGNATURE_KEY=dbb74894e82415a2f7ff0ec3a97e4183
-AAMARPAY_ENDPOINT=https://sandbox.aamarpay.com/jsonpost.php
-AAMARPAY_TRX_CHECK=https://sandbox.aamarpay.com/api/v1/trxcheck/request.php
-MEDIA_URL=/media/
+### Install dependencies**
+- python -m venv .venv
+- source .venv/bin/activate
+- pip install -r requirements.txt
+### Create a .env in the same folder as manage.py
+- SECRET_KEY=change-me
+- DEBUG=True
+- ALLOWED_HOSTS=*
+- STORE_ID=aamarpaytest
+- SIGNATURE_KEY=dbb74894e82415a2f7ff0ec3a97e4183
+- AAMARPAY_ENDPOINT=https://sandbox.aamarpay.com/jsonpost.php
+- AAMARPAY_TRX_CHECK=https://sandbox.aamarpay.com/api/v1/trxcheck/request.php
+- MEDIA_URL=/media/
 ## Run database migration
-python manage.py migrate
-python manage.py createsuperuser
+- python manage.py migrate
+- python manage.py createsuperuser
 ## Run the services
 **Terminal 1 (Django server)**:
-python manage.py runserver
-**Terminal 2 (Celery worker)**:
-celery -A aamarpay_project worker --loglevel=info
+- python manage.py runserver
+#### **Terminal 2 (Celery worker)**:
+- celery -A aamarpay_project worker --loglevel=info
 ## Celery & Redis Setup
 **Local:** Install Redis and run:
-redis-server
-celery -A aamarpay_project worker --loglevel=info
-**Docker:** Already included as a service in docker-compose.yml:
+- redis-server
+- celery -A aamarpay_project worker --loglevel=info
+#### **Docker:**
+- Already included as a service in docker-compose.yml:
 
 ## 3. Docker Setup
 docker compose up --build
