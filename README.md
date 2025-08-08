@@ -56,4 +56,4 @@ docker compose up --build
 
 **You can quickly import all API endpoints into Postman by clicking the button below:**
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://god.postman.co/run-collection?source=raw.githubusercontent.com/Monim752/aamarPay-django-task-abdul-monim/main/docs/aamarpay_postman_collection.json)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://raw.githubusercontent.com/Monim752/aamarPay-django-task-abdul-monim/main/docs/aamarpay_postman_collection.json)
