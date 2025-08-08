@@ -58,3 +58,14 @@ docker compose up --build
 **You can quickly import all API endpoints into Postman by clicking the button below:**
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://raw.githubusercontent.com/Monim752/aamarPay-django-task-abdul-monim/main/docs/aamarpay_postman_collection.json)
+
+## 5️. How to Test Payment Flow (aamarPay Sandbox)
+- Generate token → /api/token-auth/
+- Initiate payment → /api/initiate-payment/
+- Copy the payment_url and open in browser.
+- Complete sandbox payment (you can use any fake card info provided by aamarPay sandbox).
+- Redirect → project’s /api/payment/success/ endpoint will capture the payment status.
+- Verify transaction → /api/payment-status/?mer_txnid=XXXXXX
+
+## 6. Dashboard
+-Visit /dashboard/ in browser after logging into Django admin or authenticated session to see the Bootstrap-based dashboard.
